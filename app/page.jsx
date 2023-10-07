@@ -8,6 +8,28 @@ export default function Home() {
 
   const [buttonNoStyle, setButtonNoStyle] = useState({});
 
+  const handreYesClick = () => {
+    router.push("/invitation");
+
+    const audioContext = new (window.AudioContext ||
+      window.webkitAudioContext)();
+    const audioElement = new Audio("/audio/happy-birthday.mp3");
+
+    const source = audioContext.createMediaElementSource(audioElement);
+    source.connect(audioContext.destination);
+
+    const playAudio = async () => {
+      try {
+        await audioContext.resume();
+        audioElement.play();
+      } catch (err) {
+        console.error("No se pudo iniciar la reproducción automática:", err);
+      }
+    };
+
+    playAudio();
+  };
+
   const handleNoClick = () => {
     const randomX = Math.random() * (window.innerWidth - 200);
     const randomY = Math.random() * (window.innerHeight - 200);
@@ -28,7 +50,7 @@ export default function Home() {
         <button
           id="yes-button"
           className="text-lg bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500 transition"
-          onClick={() => router.push("/invitation")}
+          onClick={handreYesClick}
         >
           Sí, me encantaría
         </button>
