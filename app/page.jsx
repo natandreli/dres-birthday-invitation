@@ -7,8 +7,12 @@ export default function Home() {
   const router = useRouter();
 
   const [buttonNoStyle, setButtonNoStyle] = useState({});
+  const [alreadyYesClicked, setAlreadyYesClicked] = useState(false);
 
-  const handreYesClick = () => {
+  const handleYesClick = () => {
+    if (alreadyYesClicked) return;
+
+    setAlreadyYesClicked(true);
     router.push("/invitation");
 
     const audioContext = new (window.AudioContext ||
@@ -50,7 +54,7 @@ export default function Home() {
         <button
           id="yes-button"
           className="text-lg bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500 transition"
-          onClick={handreYesClick}
+          onClick={handleYesClick}
         >
           Sí, me encantaría
         </button>
