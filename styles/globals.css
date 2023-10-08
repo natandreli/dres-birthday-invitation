@@ -16,6 +16,6 @@ button {
 }
 
 #invitation-page {
-    background-image: url("../images/capycollage2.jpg");
+    background-image: url("/images/capycollage2.jpg");
     background-size: contain;
 }
