@@ -31,4 +31,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deployment on Vercel
 
-See the application on Vercel in this link: [dres-birthday-invitation-m4lf9ufl1-natandreli.vercel.app](dres-birthday-invitation-m4lf9ufl1-natandreli.vercel.app).
+See the application on Vercel in this link: [dres-birthday-invitation.vercel.app](dres-birthday-invitation.vercel.app).
