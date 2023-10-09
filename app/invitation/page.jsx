@@ -7,18 +7,22 @@ export default function Invitation() {
   const [backgroundColor, setBackgroundColor] = useState(getRandomColor());
   const [confetti, setConfetti] = useState(false);
 
-  window.addEventListener("popstate", () => {
-    window.location.reload();
-  });
-
   useEffect(() => {
     setConfetti(true);
     const intervalId = setInterval(() => {
       setBackgroundColor(getRandomColor());
     }, 1000);
 
+    window.addEventListener("popstate", () => {
+      window.location.reload();
+    });
+
     return () => {
       clearInterval(intervalId);
+
+      window.removeEventListener("popstate", () => {
+        window.location.reload();
+      });
     };
   }, []);
 
