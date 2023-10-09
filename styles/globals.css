@@ -14,8 +14,3 @@ button {
 .bg-card {
     background-color: #eceade;
 }
-
-#invitation-page {
-    background-image: url("/images/capycollage2.webp");
-    background-size: contain;
-}
