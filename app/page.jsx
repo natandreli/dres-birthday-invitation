@@ -18,6 +18,7 @@ export default function Home() {
     const audioContext = new (window.AudioContext ||
       window.webkitAudioContext)();
     const audioElement = new Audio("/audio/happy-birthday.mp3");
+    audioElement.playbackRate = 1.75;
 
     const source = audioContext.createMediaElementSource(audioElement);
     source.connect(audioContext.destination);
