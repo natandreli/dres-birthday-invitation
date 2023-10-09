@@ -1,20 +1,10 @@
 "use client";
 
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Loading() {
   const [color, setColor] = useState(getRandomColor());
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setColor(getRandomColor());
-    }, 100);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
 
   function getRandomColor() {
     const letters = "0123456789ABCDEF";
@@ -32,4 +22,13 @@ export default function Loading() {
       </h1>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const color = getRandomColor();
+  return {
+    props: {
+      color,
+    },
+  };
 }
