@@ -65,7 +65,7 @@ export default function Invitation() {
           </p>
           <br />
           <p className="text-lg text-center">
-            <strong>Hora:</strong> 8:00 pm (?)
+            <strong>Hora:</strong> 7:00 pm
           </p>
           <br />
           <p className="text-lg text-center">
